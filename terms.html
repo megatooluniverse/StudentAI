@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Terms of Service | Student AI Pro</title>
+    <meta name="title" content="Terms of Service | Student AI Pro">
+    <meta name="description" content="Terms of Service for Student AI Pro. Read our usage guidelines, academic integrity policies, and third-party AI disclaimers.">
+    <meta name="theme-color" content="#4f46e5">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#6366f1',
+                        primaryHover: '#4f46e5',
+                        glassLight: 'rgba(255, 255, 255, 0.6)',
+                        glassDark: 'rgba(30, 41, 59, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-attachment: fixed; overflow-x: hidden; }
+        .glass-panel {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        .dark .glass-panel {
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 min-h-screen text-slate-800 dark:text-slate-200 transition-colors duration-500 flex flex-col">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass-panel bg-white/50 dark:bg-slate-900/50 border-b border-white/20 dark:border-slate-700/50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="flex justify-between items-center py-4">
+                
+                <a href="index.html" class="text-xl md:text-2xl font-black flex items-center gap-3 tracking-tight hover:opacity-80 transition-opacity">
+                    <div class="bg-gradient-to-tr from-primary to-purple-500 text-white p-2 rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 dark:from-indigo-400 dark:to-purple-400">
+                        Student AI Pro
+                    </span>
+                </a>
+
+                <div class="flex gap-3">
+                    <a href="index.html" class="bg-white/80 dark:bg-slate-800/80 hover:bg-primary hover:text-white dark:hover:bg-primary px-4 py-2 rounded-xl text-sm font-bold shadow-sm transition-all flex items-center gap-2 border border-slate-200 dark:border-slate-700">
+                        <i class="fa-solid fa-arrow-left"></i> Back to App
+                    </a>
+                    <button onclick="toggleTheme()" class="p-2.5 bg-white/50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-700 rounded-xl shadow-sm transition-all focus:outline-none border border-slate-200 dark:border-slate-700">
+                        <i class="fa-solid fa-moon text-lg" id="themeIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 max-w-4xl flex-grow py-10">
+        
+        <div class="glass-panel bg-glassLight dark:bg-glassDark rounded-3xl p-8 md:p-12 shadow-xl">
+            
+            <div class="text-center mb-10 border-b border-slate-200 dark:border-slate-700 pb-8">
+                <h1 class="text-3xl md:text-4xl font-black mb-4 text-slate-800 dark:text-white">Terms of Service</h1>
+                <p class="text-slate-500 dark:text-slate-400 font-medium">Last updated: October 2026</p>
+            </div>
+
+            <div class="space-y-8 text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
+                
+                <section>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-indigo-300 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-primary"></i> 1. Acceptance of Terms
+                    </h2>
+                    <p>By accessing and using Student AI Pro ("the Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our application. We reserve the right to modify these terms at any time, and your continued use of the Service constitutes acceptance of those changes.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-indigo-300 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-book-open-reader text-primary"></i> 2. Academic Integrity & Acceptable Use
+                    </h2>
+                    <p class="mb-3">Student AI Pro is designed as a study aid and educational assistant. By using this tool, you agree to the following:</p>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-500 dark:text-slate-400">
+                        <li>You will not use this tool to cheat on exams, quizzes, or standardized tests.</li>
+                        <li>You will not submit AI-generated text as your own original work if it violates your school, university, or institution's plagiarism policies.</li>
+                        <li>You are solely responsible for verifying the accuracy of the information generated by the AI platforms before using it in your academic work.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-indigo-300 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-robot text-primary"></i> 3. Third-Party AI Services & Liability
+                    </h2>
+                    <p>Our application functions as a "Super Prompt" generator and router. When you click buttons to send queries to ChatGPT, Gemini, Claude, Copilot, or Google, you are redirected to third-party services. </p>
+                    <p class="mt-3"><strong>Disclaimer:</strong> Artificial Intelligence can hallucinate or provide incorrect, biased, or incomplete information. We do not control these third-party AIs and are not responsible for the accuracy of their output, nor are we liable for any academic penalties, bad grades, or damages resulting from your use of their answers.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-indigo-300 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-server text-primary"></i> 4. Local Storage and Data Loss
+                    </h2>
+                    <p>Student AI Pro uses your browser's Local Storage to save your question history and study analytics. Because this data is stored on your specific device and browser, clearing your browser cache/history will delete this data. We are not responsible for the loss of any saved history, notes, or analytics.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-indigo-300 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-ban text-primary"></i> 5. Disclaimer of Warranties
+                    </h2>
+                    <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis. We make no warranties, expressed or implied, regarding the availability, reliability, or flawless operation of the application. We do not warrant that the Service will be uninterrupted, error-free, or free of harmful components.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-indigo-300 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-gavel text-primary"></i> 6. Limitation of Liability
+                    </h2>
+                    <p>In no event shall Student AI Pro, its developers, or its affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service.</p>
+                </section>
+
+                <div class="mt-10 bg-indigo-50 dark:bg-slate-800/80 p-6 rounded-2xl border border-indigo-100 dark:border-slate-700">
+                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2">Contact for Legal Inquiries</h3>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <a href="mailto:megatooluniverse.dev@gmail.com" class="inline-block mt-3 font-semibold text-primary hover:text-primaryHover underline">megatooluniverse.dev@gmail.com</a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-6 text-center text-slate-500 dark:text-slate-400 text-sm border-t border-slate-200/50 dark:border-slate-700/50 glass-panel bg-white/30 dark:bg-slate-900/30">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Student AI Pro. Built for Academic Success.</p>
+            <div class="flex gap-4 font-medium">
+                <a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <span class="text-slate-300 dark:text-slate-600">|</span>
+                <a href="terms.html" class="text-primary transition-colors font-bold">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Theme System ---
+        function loadTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                html.classList.remove('dark');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTheme);
+    </script>
+</body>
+</html>
