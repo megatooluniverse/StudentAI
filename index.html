@@ -1,262 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="google-site-verification" content="Jf1MwPkT2yPiOEy2hwS1-l3zB_UZAynLzOi2L9GAk1Y" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>Student AI Homework Solver</title>
-    <meta name="title" content="Student AI Homework Solver">
-    <meta name="description" content="Ask any homework question and get instant AI-generated answers in multiple formats and languages. A free, smart study tool for students.">
-    <meta name="keywords" content="AI homework solver, student AI tool, homework helper, AI study app, solve math questions, OCR homework, Pomodoro study timer, Hinglish AI">
-    <meta name="author" content="Student AI">
-    <meta name="theme-color" content="#4f46e5"> <meta property="og:type" content="website">
+    <!-- Primary Meta Tags -->
+    <title>Free AI Homework Solver & Study Helper | Instant Answers</title>
+    <meta name="title" content="Free AI Homework Solver & Study Helper | Instant Answers">
+    <meta name="description" content="Stuck on homework? Ask any question and get instant AI-generated answers, study notes, and explanations. Features OCR, math solver, Pomodoro timer, and multi-language support (English, Hindi, Hinglish).">
+    <meta name="keywords" content="AI homework solver, free homework AI, math problem solver, OCR homework scanner, AI study timer, ChatGPT prompt generator for students, Gemini homework, study app, Hinglish AI, CBSE study tool, AP exam helper">
+    <meta name="author" content="Student AI Tools">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#4f46e5">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourwebsite.com/">
-    <meta property="og:title" content="Student AI Homework Solver">
-    <meta property="og:description" content="Ask any homework question and get instant AI answers. Features multi-language support (Hindi/English), study timer, and image scanning.">
+    <meta property="og:title" content="Free AI Homework Solver & Study Helper">
+    <meta property="og:description" content="Solve any homework question instantly with our Free AI Homework Solver. Features image scanning, Pomodoro timer, and custom AI prompts.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
 
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://yourwebsite.com/">
-    <meta property="twitter:title" content="Student AI Homework Solver">
-    <meta property="twitter:description" content="Ask any homework question and get instant AI answers in 1 click.">
+    <meta property="twitter:title" content="Free AI Homework Solver & Study Helper">
+    <meta property="twitter:description" content="Solve any homework question instantly with our Free AI Homework Solver. Scan images, set timers, and get AI answers.">
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
 
+    <!-- JSON-LD Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Student AI Homework Solver",
+      "url": "https://yourwebsite.com/",
+      "description": "An AI-powered tool helping students solve homework questions, generate study prompts, and manage study time.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "AI Prompt Generation",
+        "OCR Image Text Extraction",
+        "Pomodoro Study Timer",
+        "Multi-language support (Hindi, English)"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind Configuration for Custom Theme & Dark Mode -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4f46e5',
+                        primaryHover: '#4338ca',
+                        glassLight: 'rgba(255, 255, 255, 0.4)',
+                        glassDark: 'rgba(30, 41, 59, 0.6)',
+                        glassBorderLight: 'rgba(255, 255, 255, 0.6)',
+                        glassBorderDark: 'rgba(255, 255, 255, 0.1)',
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                        'fade-in': 'fadeIn 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* CSS Variables & Theme Definitions */
-        :root {
-            --bg-gradient: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-            --text-main: #1e293b;
-            --text-muted: #475569;
-            --glass-bg: rgba(255, 255, 255, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary: #ec4899;
-            --success: #10b981;
-            --bg-input: rgba(255, 255, 255, 0.7);
+        /* Base styling overrides that Tailwind doesn't strictly cover for pseudo-elements */
+        body {
+            background-attachment: fixed;
         }
-
-        [data-theme="dark"] {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --text-main: #f8fafc;
-            --text-muted: #cbd5e1;
-            --glass-bg: rgba(30, 41, 59, 0.5);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-            --primary: #6366f1;
-            --primary-hover: #818cf8;
-            --bg-input: rgba(15, 23, 42, 0.7);
+        .glass-card {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
         }
-
-        /* Base Styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
-        body { background: var(--bg-gradient); color: var(--text-main); min-height: 100vh; background-attachment: fixed; line-height: 1.6; }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
         
-        /* Layout */
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        
-        /* Glassmorphism Classes */
-        .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            padding: 24px;
-            margin-bottom: 24px;
-            animation: slideUp 0.6s ease forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        /* Animations */
-        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-        .glass:nth-child(1) { animation-delay: 0.1s; }
-        .glass:nth-child(2) { animation-delay: 0.2s; }
-        .glass:nth-child(3) { animation-delay: 0.3s; }
-        .glass:nth-child(4) { animation-delay: 0.4s; }
-
-        /* Header */
-        header {
-            position: sticky; top: 0; z-index: 100;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 16px 24px; margin-bottom: 30px;
-            background: var(--glass-bg); backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--glass-border);
-        }
-        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .logo i { color: var(--primary); }
-        .theme-toggle { background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
-
-        /* Typography */
-        h2 { font-size: 1.25rem; margin-bottom: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
-        p { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* Inputs & Textareas */
-        textarea, input[type="text"], select {
-            width: 100%; padding: 16px; border-radius: 12px;
-            border: 1px solid var(--glass-border); background: var(--bg-input);
-            color: var(--text-main); font-size: 1rem; margin-bottom: 16px;
-            resize: vertical; outline: none;
-        }
-        textarea:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); }
-
-        /* Buttons */
-        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
-        button {
-            padding: 12px 20px; border-radius: 8px; border: none; cursor: pointer;
-            font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;
-            transition: all 0.2s ease;
-        }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
-        .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: white; }
-        .btn-icon { padding: 12px; border-radius: 50%; width: 45px; height: 45px; justify-content: center; background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main); }
-        .btn-icon:hover { background: var(--primary); color: white; }
-        
-        /* Grid Layouts */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
-
-        /* Specific Sections */
-        .smart-prompt-preview {
-            background: var(--bg-input); padding: 16px; border-radius: 12px;
-            font-family: monospace; font-size: 0.9rem; margin-bottom: 16px; word-wrap: break-word;
-        }
-        
-        .tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
-        .tag { padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; background: var(--glass-bg); border: 1px solid var(--glass-border); }
-        
-        .history-list { list-style: none; }
-        .history-item { padding: 12px; border-bottom: 1px solid var(--glass-border); cursor: pointer; display: flex; align-items: center; gap: 10px; }
-        .history-item:hover { background: var(--bg-input); }
-        .history-item:last-child { border-bottom: none; }
-
-        .timer-display { font-size: 3rem; font-weight: 700; text-align: center; margin: 20px 0; font-variant-numeric: tabular-nums; }
-        
-        #ocrInput { display: none; }
-
-        /* Footer */
-        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            .btn-group { flex-direction: column; }
-            button { width: 100%; justify-content: center; }
-            .btn-icon { width: 100%; border-radius: 8px; }
-        }
+        #toast-container { z-index: 9999; }
     </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 min-h-screen text-slate-800 dark:text-slate-200 transition-colors duration-500">
 
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-graduation-cap"></i>
-            Student AI
+    <!-- Custom Toast Notification Container -->
+    <div id="toast-container" class="fixed top-5 right-5 flex flex-col gap-3 pointer-events-none"></div>
+
+    <header class="sticky top-0 z-50 glass-card bg-white/50 dark:bg-slate-900/50 border-b border-glassBorderLight dark:border-glassBorderDark px-6 py-4 flex justify-between items-center shadow-sm transition-colors duration-300">
+        <div class="text-2xl font-bold flex items-center gap-3">
+            <div class="bg-primary text-white p-2 rounded-xl flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 dark:from-indigo-400 dark:to-purple-400">Student AI</span>
         </div>
-        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-            <i class="fa-solid fa-moon"></i>
+        <button id="themeToggle" onclick="toggleTheme()" class="p-3 rounded-full hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors outline-none focus:ring-2 focus:ring-primary">
+            <i class="fa-solid fa-moon text-xl" id="themeIcon"></i>
         </button>
     </header>
 
-    <div class="container">
-        <main class="glass">
-            <h2><i class="fa-solid fa-pen-to-square"></i> Ask Your Question</h2>
-            <textarea id="questionInput" rows="5" placeholder="Type your homework question here... (e.g., What is photosynthesis?)"></textarea>
+    <main class="container mx-auto px-4 max-w-6xl py-8 space-y-8">
+        
+        <div class="glass-card bg-glassLight dark:bg-glassDark border border-glassBorderLight dark:border-glassBorderDark shadow-xl rounded-3xl p-6 md:p-8 animate-slide-up">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-pen-to-square text-primary"></i> Ask Your Question
+            </h2>
             
-            <div class="btn-group" style="margin-bottom: 16px;">
-                <button class="btn-primary" onclick="buildPrompt()"><i class="fa-solid fa-wand-magic-sparkles"></i> Process Question</button>
-                <button class="btn-outline" onclick="improveQuestion()"><i class="fa-solid fa-broom"></i> Improve Question</button>
-                <button class="btn-outline" onclick="document.getElementById('questionInput').value = ''; buildPrompt();"><i class="fa-solid fa-trash-can"></i> Clear</button>
+            <div class="relative">
+                <textarea id="questionInput" rows="5" class="w-full bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow resize-y placeholder-slate-400 dark:placeholder-slate-500" placeholder="Paste your homework question here... (e.g., Explain Newton's laws of motion)"></textarea>
+                <div class="absolute bottom-3 right-4 text-xs text-slate-500 dark:text-slate-400 font-medium" id="wordCount">0 words</div>
             </div>
+            
+            <div class="mt-4 flex flex-wrap gap-3 items-center justify-between">
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="buildPrompt()" class="bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition-transform transform hover:scale-[1.02] active:scale-95 shadow-md">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Process & Analyze
+                    </button>
+                    <button onclick="improveQuestion()" class="border-2 border-primary text-primary dark:border-indigo-400 dark:text-indigo-400 hover:bg-primary hover:text-white dark:hover:bg-indigo-500 dark:hover:text-white px-5 py-3 rounded-xl font-semibold flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-broom"></i> Rewrite & Fix
+                    </button>
+                    <button onclick="clearInput()" class="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 px-5 py-3 rounded-xl font-semibold flex items-center gap-2 transition-all text-slate-700 dark:text-slate-200">
+                        <i class="fa-solid fa-trash-can"></i> Clear
+                    </button>
+                </div>
 
-            <div class="btn-group">
-                <button class="btn-icon" title="Voice Input" onclick="startVoice()"><i class="fa-solid fa-microphone"></i></button>
-                <button class="btn-icon" title="Upload Image" onclick="document.getElementById('ocrInput').click()"><i class="fa-solid fa-camera"></i></button>
-                <input type="file" id="ocrInput" accept="image/*" onchange="processImage(this)">
-                <button class="btn-icon" title="Share Question Link" onclick="shareLink()"><i class="fa-solid fa-share-nodes"></i></button>
+                <div class="flex gap-2">
+                    <button title="Voice Typing" onclick="startVoice()" class="p-3 bg-white/60 dark:bg-slate-800/60 hover:bg-primary hover:text-white border border-slate-200 dark:border-slate-700 rounded-full transition-colors flex items-center justify-center w-12 h-12 shadow-sm">
+                        <i class="fa-solid fa-microphone text-lg"></i>
+                    </button>
+                    <button title="Scan Image (OCR)" onclick="document.getElementById('ocrInput').click()" class="p-3 bg-white/60 dark:bg-slate-800/60 hover:bg-primary hover:text-white border border-slate-200 dark:border-slate-700 rounded-full transition-colors flex items-center justify-center w-12 h-12 shadow-sm relative overflow-hidden">
+                        <i class="fa-solid fa-camera text-lg"></i>
+                        <input type="file" id="ocrInput" accept="image/*" onchange="processImage(this)" class="absolute inset-0 opacity-0 cursor-pointer">
+                    </button>
+                </div>
             </div>
-            <p id="statusMsg" style="margin-top: 10px; color: var(--secondary); font-weight: bold; display: none;"></p>
-        </main>
-
-        <div class="grid-2">
-            <section class="glass">
-                <h2><i class="fa-solid fa-sliders"></i> Answer Style</h2>
-                <select id="answerStyle" onchange="buildPrompt()">
-                    <option value="detailed">Detailed Explanation</option>
-                    <option value="short">Short Answer</option>
-                    <option value="5marks">5 Marks Answer</option>
-                    <option value="10marks">10 Marks Answer</option>
-                    <option value="bullets">Bullet Points</option>
-                    <option value="easy">Easy Language (for kids)</option>
-                </select>
-
-                <h2><i class="fa-solid fa-language"></i> Output Language</h2>
-                <select id="outputLanguage" onchange="buildPrompt()">
-                    <option value="english">English</option>
-                    <option value="hindi">Hindi (हिंदी)</option>
-                    <option value="hinglish">Hinglish (Hindi + English mix)</option>
-                </select>
-
-                <h2><i class="fa-solid fa-terminal"></i> Smart Prompt Preview</h2>
-                <div class="smart-prompt-preview" id="promptPreview">
-                    Your generated AI prompt will appear here...
-                </div>
-                <button class="btn-outline" onclick="copyPrompt()"><i class="fa-regular fa-copy"></i> Copy Prompt</button>
-            </section>
-
-            <section class="glass">
-                <h2><i class="fa-solid fa-microchip"></i> AI Analysis</h2>
-                <div class="tags">
-                    <span class="tag" id="subjectTag"><i class="fa-solid fa-book"></i> Subject: Auto</span>
-                    <span class="tag" id="diffTag"><i class="fa-solid fa-gauge"></i> Difficulty: Auto</span>
-                </div>
-
-                <h2><i class="fa-solid fa-rocket"></i> Open In AI</h2>
-                <div class="grid-4">
-                    <button class="btn-outline" onclick="openAI('chatgpt')"><i class="fa-solid fa-robot"></i> ChatGPT</button>
-                    <button class="btn-outline" onclick="openAI('gemini')"><i class="fa-solid fa-sparkles"></i> Gemini</button>
-                    <button class="btn-outline" onclick="openAI('copilot')"><i class="fa-brands fa-microsoft"></i> Copilot</button>
-                    <button class="btn-outline" onclick="openAI('google')"><i class="fa-brands fa-google"></i> Google</button>
-                </div>
-                <button class="btn-primary" style="margin-top: 15px; width: 100%; justify-content: center;" onclick="searchEverywhere()">
-                    <i class="fa-solid fa-globe"></i> Search Everywhere
-                </button>
-            </section>
         </div>
 
-        <div class="grid-2">
-            <section class="glass">
-                <h2><i class="fa-solid fa-clock-rotate-left"></i> Recent Questions</h2>
-                <ul class="history-list" id="historyList">
-                    <li class="history-item">No recent questions</li>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Left Column: Options & AI Integrations -->
+            <div class="space-y-8">
+                
+                <div class="glass-card bg-glassLight dark:bg-glassDark border border-glassBorderLight dark:border-glassBorderDark shadow-xl rounded-3xl p-6 animate-slide-up" style="animation-delay: 0.1s;">
+                    <h2 class="text-xl font-bold mb-5 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-primary"></i> Answer Configuration
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-slate-600 dark:text-slate-300">Detail Level</label>
+                            <select id="answerStyle" onchange="buildPrompt()" class="w-full bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary/50 cursor-pointer">
+                                <option value="detailed">Detailed Explanation (Best for learning)</option>
+                                <option value="short">Short & Direct Answer</option>
+                                <option value="5marks">Exam: 5 Marks Format</option>
+                                <option value="10marks">Exam: 10 Marks Format</option>
+                                <option value="bullets">Key Bullet Points Only</option>
+                                <option value="easy">Explain Like I'm 5 (Simple)</option>
+                                <option value="math">Step-by-Step Math Solution</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-slate-600 dark:text-slate-300">Output Language</label>
+                            <select id="outputLanguage" onchange="buildPrompt()" class="w-full bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary/50 cursor-pointer">
+                                <option value="english">English (Default)</option>
+                                <option value="hindi">Hindi (हिंदी)</option>
+                                <option value="hinglish">Hinglish (Hindi + English mix)</option>
+                                <option value="spanish">Spanish (Español)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card bg-glassLight dark:bg-glassDark border border-glassBorderLight dark:border-glassBorderDark shadow-xl rounded-3xl p-6 animate-slide-up" style="animation-delay: 0.2s;">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-rocket text-primary"></i> Launch in AI
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Send your optimized prompt directly to your favorite AI assistant.</p>
+                    
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <button onclick="openAI('chatgpt')" class="flex items-center justify-center gap-2 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 hover:border-green-500 hover:text-green-600 dark:hover:border-green-400 dark:hover:text-green-400 p-3 rounded-xl font-medium transition-all group">
+                            <i class="fa-solid fa-robot group-hover:scale-110 transition-transform"></i> ChatGPT
+                        </button>
+                        <button onclick="openAI('gemini')" class="flex items-center justify-center gap-2 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 p-3 rounded-xl font-medium transition-all group">
+                            <i class="fa-solid fa-sparkles group-hover:scale-110 transition-transform"></i> Gemini
+                        </button>
+                        <button onclick="openAI('copilot')" class="flex items-center justify-center gap-2 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 hover:border-sky-500 hover:text-sky-600 dark:hover:border-sky-400 dark:hover:text-sky-400 p-3 rounded-xl font-medium transition-all group">
+                            <i class="fa-brands fa-microsoft group-hover:scale-110 transition-transform"></i> Copilot
+                        </button>
+                        <button onclick="openAI('claude')" class="flex items-center justify-center gap-2 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 hover:border-orange-500 hover:text-orange-600 dark:hover:border-orange-400 dark:hover:text-orange-400 p-3 rounded-xl font-medium transition-all group">
+                            <i class="fa-solid fa-brain group-hover:scale-110 transition-transform"></i> Claude
+                        </button>
+                    </div>
+                    <button onclick="searchEverywhere()" class="w-full bg-slate-800 text-white dark:bg-slate-200 dark:text-slate-900 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 dark:hover:bg-white transition-all shadow-md">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search Google
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="space-y-8">
+                
+                <div class="glass-card bg-glassLight dark:bg-glassDark border border-glassBorderLight dark:border-glassBorderDark shadow-xl rounded-3xl p-6 h-full flex flex-col animate-slide-up" style="animation-delay: 0.15s;">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-primary"></i> Super Prompt
+                        </h2>
+                        <div class="flex gap-2">
+                            <span id="subjectTag" class="text-xs font-semibold bg-white/60 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-600 px-3 py-1 rounded-full text-primary dark:text-indigo-300">
+                                <i class="fa-solid fa-book"></i> Auto
+                            </span>
+                            <span id="diffTag" class="text-xs font-semibold bg-white/60 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-600 px-3 py-1 rounded-full text-orange-500 dark:text-orange-400">
+                                <i class="fa-solid fa-gauge"></i> Auto
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div id="promptPreview" class="flex-grow bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 font-mono text-sm whitespace-pre-wrap overflow-y-auto mb-4 text-slate-700 dark:text-slate-300 min-h-[150px]">Start typing your question to generate an optimized prompt...</div>
+                    
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <button onclick="copyPrompt()" class="bg-primary hover:bg-primaryHover text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-regular fa-copy"></i> Copy Prompt
+                        </button>
+                        <button onclick="exportPrompt()" class="border-2 border-primary text-primary dark:border-indigo-400 dark:text-indigo-400 hover:bg-primary hover:text-white dark:hover:bg-indigo-500 dark:hover:text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-download"></i> Save .txt
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="glass-card bg-glassLight dark:bg-glassDark border border-glassBorderLight dark:border-glassBorderDark shadow-xl rounded-3xl p-6 animate-slide-up" style="animation-delay: 0.25s;">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left text-primary"></i> Recent History
+                    </h2>
+                    <button onclick="clearHistory()" class="text-xs text-slate-500 hover:text-red-500 transition-colors underline">Clear All</button>
+                </div>
+                <ul id="historyList" class="space-y-2 max-h-[200px] overflow-y-auto pr-2">
+                    <li class="text-slate-500 dark:text-slate-400 text-sm italic p-3 bg-white/40 dark:bg-slate-800/40 rounded-lg">No recent questions</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="glass">
-                <h2><i class="fa-solid fa-stopwatch"></i> Focus Study Mode</h2>
-                <p>25-minute distraction-free timer.</p>
-                <div class="timer-display" id="timerDisplay">25:00</div>
-                <div class="btn-group" style="justify-content: center;">
-                    <button class="btn-primary" id="timerBtn" onclick="toggleTimer()"><i class="fa-solid fa-play"></i> Start Timer</button>
-                    <button class="btn-outline" onclick="resetTimer()"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+            <div class="glass-card bg-glassLight dark:bg-glassDark border border-glassBorderLight dark:border-glassBorderDark shadow-xl rounded-3xl p-6 flex flex-col items-center justify-center animate-slide-up" style="animation-delay: 0.3s;">
+                <h2 class="text-xl font-bold mb-2 flex items-center gap-2 w-full justify-center">
+                    <i class="fa-solid fa-stopwatch text-primary"></i> Focus Timer (Pomodoro)
+                </h2>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 text-center">Stay focused. 25-minute study sessions.</p>
+                
+                <div id="timerDisplay" class="text-6xl font-black tabular-nums text-slate-800 dark:text-white mb-6 drop-shadow-md">
+                    25:00
                 </div>
-            </section>
-        </div>
-    </div>
+                
+                <div class="flex gap-4 w-full">
+                    <button id="timerBtn" onclick="toggleTimer()" class="flex-1 bg-primary hover:bg-primaryHover text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-transform transform hover:scale-[1.02] shadow-md">
+                        <i class="fa-solid fa-play"></i> Start
+                    </button>
+                    <button onclick="resetTimer()" class="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 py-3 px-6 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all text-slate-700 dark:text-slate-200">
+                        <i class="fa-solid fa-rotate-right"></i> Reset
+                    </button>
+                </div>
+            </div>
 
-    <footer>
-        <p>Built for Students | Free AI Homework Helper</p>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-sm text-slate-500 dark:text-slate-400">
+        <p>&copy; 2026 Student AI Homework Solver. Built for Students.</p>
+        <div class="mt-2 flex justify-center gap-4">
+            <a href="#" class="hover:text-primary transition-colors">Privacy</a>
+            <a href="#" class="hover:text-primary transition-colors">Terms</a>
+            <a href="#" class="hover:text-primary transition-colors" onclick="shareLink(event)">Share App</a>
+        </div>
     </footer>
 
     <script>
@@ -268,24 +317,91 @@
         
         // --- Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
+            loadTheme();
             loadHistory();
             checkUrlHash();
             
-            // Auto-update prompt as user types
-            document.getElementById('questionInput').addEventListener('input', buildPrompt);
+            const qInput = document.getElementById('questionInput');
+            qInput.addEventListener('input', () => {
+                updateWordCount();
+                buildPrompt();
+            });
         });
 
+        // --- Custom Toast Notification System ---
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            // Icon and Colors based on type
+            let icon = 'fa-circle-info';
+            let colorClass = 'bg-blue-500';
+            
+            if (type === 'success') { icon = 'fa-circle-check'; colorClass = 'bg-green-500'; }
+            if (type === 'error') { icon = 'fa-circle-exclamation'; colorClass = 'bg-red-500'; }
+            if (type === 'warning') { icon = 'fa-triangle-exclamation'; colorClass = 'bg-orange-500'; }
+
+            toast.className = `flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg text-white font-medium text-sm transform transition-all duration-300 translate-x-full opacity-0 ${colorClass}`;
+            toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Animate In
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-x-full', 'opacity-0');
+                toast.classList.add('translate-x-0', 'opacity-100');
+            });
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('translate-x-0', 'opacity-100');
+                toast.classList.add('translate-x-full', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
         // --- Theme Logic ---
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.querySelector('#themeToggle i');
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                icon.className = 'fa-solid fa-moon';
+        function loadTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
             } else {
-                body.setAttribute('data-theme', 'dark');
-                icon.className = 'fa-solid fa-sun';
+                html.classList.remove('dark');
+                icon.classList.replace('fa-sun', 'fa-moon');
             }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+
+        // --- Input Utilities ---
+        function updateWordCount() {
+            const text = document.getElementById('questionInput').value.trim();
+            const count = text ? text.split(/\s+/).length : 0;
+            document.getElementById('wordCount').innerText = `${count} word${count !== 1 ? 's' : ''}`;
+        }
+
+        function clearInput() {
+            document.getElementById('questionInput').value = '';
+            updateWordCount();
+            buildPrompt();
+            showToast('Input cleared', 'info');
         }
 
         // --- Core Prompt Logic ---
@@ -296,265 +412,317 @@
             const preview = document.getElementById('promptPreview');
             
             if (!rawQuestion) {
-                preview.innerText = "Your generated AI prompt will appear here...";
-                document.getElementById('subjectTag').innerHTML = `<i class="fa-solid fa-book"></i> Subject: Auto`;
-                document.getElementById('diffTag').innerHTML = `<i class="fa-solid fa-gauge"></i> Difficulty: Auto`;
+                preview.innerHTML = "<span class='text-slate-400'>Start typing your question to generate an optimized prompt...</span>";
+                document.getElementById('subjectTag').innerHTML = `<i class="fa-solid fa-book"></i> Auto`;
+                document.getElementById('diffTag').innerHTML = `<i class="fa-solid fa-gauge"></i> Auto`;
                 finalPrompt = "";
                 return;
             }
 
             // Analyze
             detectSubjectAndDifficulty(rawQuestion);
-            saveHistory(rawQuestion);
+            // Debounced save history to avoid saving every keystroke immediately
+            clearTimeout(window.historyTimeout);
+            window.historyTimeout = setTimeout(() => saveHistory(rawQuestion), 2000);
 
-            // Construct Prompt
+            // Construct Prompt Modifiers
             let styleModifier = "";
             switch(style) {
-                case 'short': styleModifier = "Provide a brief, concise, and direct short answer."; break;
+                case 'short': styleModifier = "Provide a brief, concise, and direct short answer. No fluff."; break;
                 case '5marks': styleModifier = "Format this as a 5-mark exam answer. Include a brief introduction, 3-4 key points, and a conclusion. Provide examples if relevant."; break;
                 case '10marks': styleModifier = "Format this as a detailed 10-mark exam answer. Include a comprehensive introduction, subheadings, detailed explanations, examples, and a strong conclusion."; break;
                 case 'bullets': styleModifier = "Answer strictly using easy-to-read bullet points."; break;
-                case 'easy': styleModifier = "Explain this in very simple language, as if you are talking to a 5th grader. Use everyday analogies."; break;
-                case 'detailed': styleModifier = "Act as an expert teacher. Provide a detailed, step-by-step explanation with examples and key takeaways."; break;
+                case 'easy': styleModifier = "Explain this in very simple language, as if you are talking to a beginner or a 10-year-old. Use everyday analogies."; break;
+                case 'detailed': styleModifier = "Act as an expert teacher. Provide a detailed, step-by-step explanation with examples, context, and key takeaways."; break;
+                case 'math': styleModifier = "Solve this math problem step-by-step. Show all your work, formulas used, and clearly state the final answer."; break;
             }
 
-            // Language Modifier
             let langModifier = "";
             switch(language) {
                 case 'english': langModifier = "Provide the entire answer in English."; break;
-                case 'hindi': langModifier = "Provide the entire answer strictly in Hindi (हिंदी script)."; break;
-                case 'hinglish': langModifier = "Provide the answer in Hinglish (a mix of Hindi and English, written in the English alphabet)."; break;
+                case 'hindi': langModifier = "Provide the entire answer strictly in Hindi (Devanagari script)."; break;
+                case 'hinglish': langModifier = "Provide the answer in Hinglish (a casual mix of Hindi and English, written using the English alphabet)."; break;
+                case 'spanish': langModifier = "Provide the entire answer in Spanish."; break;
             }
 
             // Combine into final prompt
-            finalPrompt = `${styleModifier}\n${langModifier}\n\nQuestion: "${rawQuestion}"`;
+            finalPrompt = `System Instructions:\n- ${styleModifier}\n- ${langModifier}\n\nUser Question:\n"${rawQuestion}"`;
             preview.innerText = finalPrompt;
         }
 
-        // --- Question Improver ---
         function improveQuestion() {
             let q = document.getElementById('questionInput').value.trim();
-            if(!q) return;
+            if(!q) { showToast('Enter a question first to improve it.', 'warning'); return; }
             
             // Basic heuristic cleanup
-            q = q.replace(/\s+/g, ' '); 
-            q = q.charAt(0).toUpperCase() + q.slice(1); 
+            q = q.replace(/\s+/g, ' '); // remove extra spaces
+            q = q.charAt(0).toUpperCase() + q.slice(1); // capitalize first letter
             
-            if(!q.match(/[?.!]$/)) {
-                q += '?';
-            }
+            if(!q.match(/[?.!]$/)) { q += '?'; }
             
+            // common hinglish fix
             if(q.toLowerCase().includes('kya hai')) {
-                q = `Explain what is meant by: ${q.replace(/kya hai\??/gi, '')}?`;
+                q = `Explain what is meant by: ${q.replace(/kya hai\??/gi, '').trim()}?`;
             }
 
             document.getElementById('questionInput').value = q;
+            updateWordCount();
             buildPrompt();
-            showStatus("Question Improved!");
+            showToast("Question syntax improved!", "success");
         }
 
         // --- Detectors ---
         function detectSubjectAndDifficulty(text) {
             const t = text.toLowerCase();
             let subject = "General";
+            let subIcon = "fa-book";
             
             const subjects = {
-                "Math": ['equation', 'calculate', 'solve', 'derivative', 'integral', 'geometry', 'algebra', 'math'],
-                "Biology": ['cell', 'photosynthesis', 'body', 'heart', 'animal', 'plant', 'dna', 'mitosis'],
-                "Physics": ['velocity', 'gravity', 'force', 'einstein', 'newton', 'quantum', 'physics'],
-                "Chemistry": ['reaction', 'acid', 'base', 'periodic', 'molecule', 'atom', 'chemistry'],
-                "History": ['war', 'revolution', 'century', 'king', 'empire', 'battle', 'history'],
-                "Computer Science": ['code', 'program', 'algorithm', 'software', 'html', 'python', 'java']
+                "Math": { keywords: ['equation', 'calculate', 'solve', 'derivative', 'integral', 'geometry', 'algebra', 'math', '+', '-', '*', '/'], icon: 'fa-calculator' },
+                "Biology": { keywords: ['cell', 'photosynthesis', 'body', 'heart', 'animal', 'plant', 'dna', 'mitosis', 'biology'], icon: 'fa-leaf' },
+                "Physics": { keywords: ['velocity', 'gravity', 'force', 'einstein', 'newton', 'quantum', 'physics', 'motion', 'energy'], icon: 'fa-atom' },
+                "Chemistry": { keywords: ['reaction', 'acid', 'base', 'periodic', 'molecule', 'atom', 'chemistry', 'compound'], icon: 'fa-flask' },
+                "History": { keywords: ['war', 'revolution', 'century', 'king', 'empire', 'battle', 'history', 'date', 'who was'], icon: 'fa-landmark' },
+                "CompSci": { keywords: ['code', 'program', 'algorithm', 'software', 'html', 'python', 'java', 'css', 'javascript'], icon: 'fa-code' }
             };
 
-            for (const [sub, keywords] of Object.entries(subjects)) {
-                if (keywords.some(kw => t.includes(kw))) {
+            for (const [sub, data] of Object.entries(subjects)) {
+                if (data.keywords.some(kw => t.includes(kw))) {
                     subject = sub;
+                    subIcon = data.icon;
                     break;
                 }
             }
 
             const words = t.split(' ').length;
             let diff = "Easy";
-            if (words > 20 || t.includes('evaluate') || t.includes('analyze') || t.includes('synthesize')) diff = "Hard";
-            else if (words > 8) diff = "Medium";
+            let diffColor = "text-green-500";
+            
+            if (words > 30 || t.includes('evaluate') || t.includes('analyze') || t.includes('synthesize') || t.includes('derive')) {
+                diff = "Hard";
+                diffColor = "text-red-500";
+            } else if (words > 12) {
+                diff = "Medium";
+                diffColor = "text-orange-500";
+            }
 
-            document.getElementById('subjectTag').innerHTML = `<i class="fa-solid fa-book"></i> Subject: ${subject}`;
-            document.getElementById('diffTag').innerHTML = `<i class="fa-solid fa-gauge"></i> Difficulty: ${diff}`;
+            document.getElementById('subjectTag').innerHTML = `<i class="fa-solid ${subIcon}"></i> ${subject}`;
+            const diffEl = document.getElementById('diffTag');
+            diffEl.innerHTML = `<i class="fa-solid fa-gauge"></i> ${diff}`;
+            diffEl.className = `text-xs font-semibold bg-white/60 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-600 px-3 py-1 rounded-full ${diffColor}`;
         }
 
-        // --- Multi AI Redirection ---
+        // --- Actions ---
+        function copyPrompt() {
+            if(!finalPrompt) { showToast("Nothing to copy!", "warning"); return; }
+            navigator.clipboard.writeText(finalPrompt).then(() => {
+                showToast("Copied to clipboard!", "success");
+            }).catch(err => {
+                showToast("Failed to copy", "error");
+            });
+        }
+
+        function exportPrompt() {
+            if(!finalPrompt) { showToast("Nothing to export!", "warning"); return; }
+            const blob = new Blob([finalPrompt], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Study_Prompt_${new Date().getTime()}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast("File downloaded!", "success");
+        }
+
         function openAI(platform) {
-            if(!finalPrompt) {
-                alert("Please enter a question first.");
-                return;
-            }
+            if(!finalPrompt) { showToast("Please enter a question first.", "warning"); return; }
+            
+            // Auto copy to clipboard for convenience since some AI tools don't accept query params perfectly
+            navigator.clipboard.writeText(finalPrompt);
+            showToast("Prompt copied! Opening " + platform + "...", "info");
+
             const encoded = encodeURIComponent(finalPrompt);
             let url = "";
 
-            switch(platform) {
-                case 'chatgpt': url = `https://chatgpt.com/?q=${encoded}`; break;
-                case 'gemini': url = `https://gemini.google.com/app?q=${encoded}`; break;
-                case 'copilot': url = `https://www.bing.com/search?q=${encoded}&showconv=1`; break;
-                case 'google': url = `https://www.google.com/search?q=${encoded}`; break;
-            }
-            window.open(url, '_blank');
+            setTimeout(() => {
+                switch(platform) {
+                    case 'chatgpt': url = `https://chatgpt.com/?q=${encoded}`; break;
+                    case 'gemini': url = `https://gemini.google.com/app?q=${encoded}`; break;
+                    case 'copilot': url = `https://www.bing.com/search?q=${encoded}&showconv=1`; break;
+                    case 'claude': url = `https://claude.ai/new`; break; // Claude doesn't support query params well, relies on clipboard
+                }
+                window.open(url, '_blank');
+            }, 500);
         }
 
         function searchEverywhere() {
-            if(!finalPrompt) { alert("Please enter a question first."); return; }
-            alert("Ensure pop-ups are allowed for this site. Opening tabs...");
-            openAI('chatgpt');
-            setTimeout(() => openAI('gemini'), 500);
-            setTimeout(() => openAI('google'), 1000);
+            if(!document.getElementById('questionInput').value.trim()) { showToast("Enter a question to search.", "warning"); return; }
+            const q = encodeURIComponent(document.getElementById('questionInput').value.trim());
+            window.open(`https://www.google.com/search?q=${q}`, '_blank');
         }
 
-        // --- History / LocalStorage ---
+        function shareLink(e) {
+            if(e) e.preventDefault();
+            const q = document.getElementById('questionInput').value.trim();
+            let url = window.location.origin + window.location.pathname;
+            if (q) url += '#q=' + encodeURIComponent(q);
+            
+            navigator.clipboard.writeText(url).then(() => {
+                showToast("Shareable link copied!", "success");
+            });
+        }
+
+        // --- History Management ---
         function saveHistory(question) {
-            if(!question) return;
+            if(!question || question.length < 5) return; // Don't save very short inputs
             let history = JSON.parse(localStorage.getItem('studentAihistory') || '[]');
-            history = history.filter(q => q !== question);
+            history = history.filter(q => q !== question); // Remove duplicate
             history.unshift(question);
-            if(history.length > 5) history.pop();
+            if(history.length > 10) history.pop(); // Keep last 10
             localStorage.setItem('studentAihistory', JSON.stringify(history));
             renderHistory();
         }
 
-        function loadHistory() {
-            renderHistory();
-        }
+        function loadHistory() { renderHistory(); }
 
         function renderHistory() {
             let history = JSON.parse(localStorage.getItem('studentAihistory') || '[]');
             const list = document.getElementById('historyList');
             if(history.length === 0) {
-                list.innerHTML = '<li class="history-item">No recent questions</li>';
+                list.innerHTML = '<li class="text-slate-500 dark:text-slate-400 text-sm italic p-3 bg-white/40 dark:bg-slate-800/40 rounded-lg border border-transparent">No recent questions</li>';
                 return;
             }
             list.innerHTML = '';
             history.forEach(q => {
                 const li = document.createElement('li');
-                li.className = 'history-item';
-                li.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> ${q.length > 50 ? q.substring(0, 50) + '...' : q}`;
+                li.className = 'text-sm p-3 bg-white/60 dark:bg-slate-800/60 hover:bg-white dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg cursor-pointer transition-colors whitespace-nowrap overflow-hidden text-ellipsis flex items-center gap-2 text-slate-700 dark:text-slate-200';
+                li.innerHTML = `<i class="fa-solid fa-clock-rotate-left text-slate-400"></i> ${q}`;
                 li.onclick = () => {
                     document.getElementById('questionInput').value = q;
+                    updateWordCount();
                     buildPrompt();
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 };
                 list.appendChild(li);
             });
         }
+        
+        function clearHistory() {
+            localStorage.removeItem('studentAihistory');
+            renderHistory();
+            showToast("History cleared", "info");
+        }
 
-        // --- Speech Recognition ---
+        // --- Advanced Inputs (Voice & OCR) ---
         function startVoice() {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             if (!SpeechRecognition) {
-                alert("Your browser does not support Voice Input. Try Google Chrome.");
+                showToast("Voice input not supported in this browser.", "error");
                 return;
             }
             const recognition = new SpeechRecognition();
             const lang = document.getElementById('outputLanguage').value;
-            recognition.lang = lang === 'hindi' ? 'hi-IN' : 'en-US'; 
+            recognition.lang = lang === 'hindi' ? 'hi-IN' : (lang === 'spanish' ? 'es-ES' : 'en-US'); 
             
-            showStatus("Listening... Please speak now.");
+            showToast("Listening... Speak now.", "info");
             
             recognition.onresult = function(event) {
                 const text = event.results[0][0].transcript;
                 const input = document.getElementById('questionInput');
                 input.value += (input.value ? ' ' : '') + text;
+                updateWordCount();
                 buildPrompt();
-                showStatus("Voice captured!");
+                showToast("Voice captured!", "success");
             };
             
             recognition.onerror = function(event) {
-                showStatus("Voice error: " + event.error);
+                showToast("Voice error: " + event.error, "error");
             };
             
             recognition.start();
         }
 
-        // --- Image Scanner (OCR) ---
         async function processImage(input) {
             const file = input.files[0];
             if (!file) return;
             
-            showStatus("<i class='fa-solid fa-spinner fa-spin'></i> Scanning Image... Please wait.");
+            showToast("Scanning image... This may take a moment.", "info");
             
             try {
-                const result = await Tesseract.recognize(file, 'eng');
-                const text = result.data.text.trim();
+                // Initialize Tesseract worker for better performance
+                const worker = await Tesseract.createWorker('eng');
+                const ret = await worker.recognize(file);
+                const text = ret.data.text.trim();
+                await worker.terminate();
+
                 if(text) {
                     const qInput = document.getElementById('questionInput');
-                    qInput.value = text;
+                    // Append or replace depending on current input
+                    qInput.value = qInput.value ? qInput.value + '\n' + text : text;
+                    updateWordCount();
                     buildPrompt();
-                    showStatus("Image Scanned Successfully!");
+                    showToast("Text extracted from image!", "success");
                 } else {
-                    showStatus("No text found in image.");
+                    showToast("No readable text found.", "warning");
                 }
             } catch (error) {
-                showStatus("Error scanning image.");
+                showToast("Error processing image.", "error");
                 console.error(error);
             }
+            // Reset input so the same file can be selected again
+            input.value = '';
         }
 
         // --- Utilities ---
-        function copyPrompt() {
-            if(!finalPrompt) { alert("Nothing to copy!"); return; }
-            navigator.clipboard.writeText(finalPrompt).then(() => {
-                showStatus("Prompt Copied to Clipboard!");
-            });
-        }
-
-        function shareLink() {
-            const q = document.getElementById('questionInput').value.trim();
-            if(!q) { alert("Enter a question to share."); return; }
-            const url = window.location.origin + window.location.pathname + '#q=' + encodeURIComponent(q);
-            navigator.clipboard.writeText(url).then(() => {
-                showStatus("Share Link Copied to Clipboard!");
-            });
-        }
-
         function checkUrlHash() {
             if(window.location.hash.startsWith('#q=')) {
                 const q = decodeURIComponent(window.location.hash.substring(3));
                 document.getElementById('questionInput').value = q;
+                updateWordCount();
                 buildPrompt();
+                // Clean URL
                 window.history.replaceState(null, null, window.location.pathname); 
             }
         }
 
-        function showStatus(msg) {
-            const el = document.getElementById('statusMsg');
-            el.innerHTML = msg;
-            el.style.display = 'block';
-            setTimeout(() => { el.style.display = 'none'; }, 3000);
-        }
-
-        // --- Study Timer (Pomodoro) ---
+        // --- Pomodoro Timer ---
         function updateTimerDisplay() {
             const mins = Math.floor(timeLeft / 60).toString().padStart(2, '0');
             const secs = (timeLeft % 60).toString().padStart(2, '0');
             document.getElementById('timerDisplay').innerText = `${mins}:${secs}`;
+            document.title = isTimerRunning ? `(${mins}:${secs}) Focus - Student AI` : 'Free AI Homework Solver & Study Helper';
         }
 
         function toggleTimer() {
             const btn = document.getElementById('timerBtn');
             if (isTimerRunning) {
                 clearInterval(timerInterval);
-                btn.innerHTML = '<i class="fa-solid fa-play"></i> Resume Timer';
+                btn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
+                btn.classList.remove('bg-orange-500', 'hover:bg-orange-600');
+                btn.classList.add('bg-primary', 'hover:bg-primaryHover');
+                showToast("Timer paused.", "info");
             } else {
                 timerInterval = setInterval(() => {
                     timeLeft--;
                     updateTimerDisplay();
                     if (timeLeft <= 0) {
                         clearInterval(timerInterval);
-                        alert("Focus session complete! Take a 5 minute break.");
+                        isTimerRunning = false;
+                        showToast("Session complete! Take a break.", "success");
+                        // Play a sound
+                        playBeep();
                         resetTimer();
                     }
                 }, 1000);
-                btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause Timer';
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+                btn.classList.remove('bg-primary', 'hover:bg-primaryHover');
+                btn.classList.add('bg-orange-500', 'hover:bg-orange-600');
+                showToast("Timer started. Focus!", "success");
             }
             isTimerRunning = !isTimerRunning;
+            updateTimerDisplay();
         }
 
         function resetTimer() {
@@ -562,7 +730,25 @@
             isTimerRunning = false;
             timeLeft = 25 * 60;
             updateTimerDisplay();
-            document.getElementById('timerBtn').innerHTML = '<i class="fa-solid fa-play"></i> Start Timer';
+            const btn = document.getElementById('timerBtn');
+            btn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+            btn.classList.remove('bg-orange-500', 'hover:bg-orange-600');
+            btn.classList.add('bg-primary', 'hover:bg-primaryHover');
+            document.title = 'Free AI Homework Solver & Study Helper';
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, ctx.currentTime);
+                osc.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.5);
+            } catch (e) {
+                console.log("Audio not supported or blocked");
+            }
         }
     </script>
 </body>
